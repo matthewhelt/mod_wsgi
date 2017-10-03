@@ -5,6 +5,36 @@ Release Notes
 .. toctree::
    :maxdepth: 2
 
+   release-notes/version-4.5.20
+   release-notes/version-4.5.19
+   release-notes/version-4.5.18
+   release-notes/version-4.5.17
+   release-notes/version-4.5.16
+   release-notes/version-4.5.15
+   release-notes/version-4.5.14
+   release-notes/version-4.5.13
+   release-notes/version-4.5.12
+   release-notes/version-4.5.11
+   release-notes/version-4.5.10
+   release-notes/version-4.5.9
+   release-notes/version-4.5.8
+   release-notes/version-4.5.7
+   release-notes/version-4.5.6
+   release-notes/version-4.5.5
+   release-notes/version-4.5.4
+   release-notes/version-4.5.3
+   release-notes/version-4.5.2
+   release-notes/version-4.5.1
+   release-notes/version-4.5.0
+
+   release-notes/version-4.4.23
+   release-notes/version-4.4.22
+   release-notes/version-4.4.21
+   release-notes/version-4.4.20
+   release-notes/version-4.4.19
+   release-notes/version-4.4.18
+   release-notes/version-4.4.17
+   release-notes/version-4.4.16
    release-notes/version-4.4.15
    release-notes/version-4.4.14
    release-notes/version-4.4.13

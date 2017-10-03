@@ -4,7 +4,7 @@
 /* ------------------------------------------------------------------------- */
 
 /*
- * Copyright 2007-2015 GRAHAM DUMPLETON
+ * Copyright 2007-2017 GRAHAM DUMPLETON
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -107,6 +107,7 @@ typedef struct {
     int error_override;
     int chunked_request;
     int map_head_to_get;
+    int ignore_activity;
 
     apr_array_header_t *trusted_proxy_headers;
     apr_array_header_t *trusted_proxies;

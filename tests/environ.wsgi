@@ -13,6 +13,16 @@ import mod_wsgi
 import apache
 
 def application(environ, start_response):
+    print('request message #1', file=environ['wsgi.errors'])
+    print('global message #1')
+    print('queued message #1', end='')
+    print('request message #2', file=environ['wsgi.errors'])
+    print('global message #2')
+    print('queued message #2', end='')
+    print('request message #3', file=environ['wsgi.errors'])
+    print('queued message #3', '+', sep="", end='')
+    print('queued message #4', end='')
+
     headers = []
     headers.append(('Content-Type', 'text/plain; charset="UTF-8"'))
     write = start_response('200 OK', headers)
@@ -20,13 +30,23 @@ def application(environ, start_response):
     input = environ['wsgi.input']
     output = StringIO()
 
-    print('PID: %s' % os.getpid(), file=output)
-    print('UID: %s' % os.getuid(), file=output)
-    print('GID: %s' % os.getgid(), file=output)
-    print('CWD: %s' % os.getcwd(), file=output)
+    if os.name != 'nt':
+        print('PID: %s' % os.getpid(), file=output)
+        print('UID: %s' % os.getuid(), file=output)
+        print('GID: %s' % os.getgid(), file=output)
+        print('CWD: %s' % os.getcwd(), file=output)
+        print(file=output)
+
+    print('STDOUT:', sys.stdout.name, file=output)
+    print('STDERR:', sys.stderr.name, file=output)
+    print('ERRORS:', environ['wsgi.errors'].name, file=output)
     print(file=output)
 
     print('python.version: %r' % (sys.version,), file=output)
+    print('python.prefix: %r' % (sys.prefix,), file=output)
+    print('python.path: %r' % (sys.path,), file=output)
+    print(file=output)
+
     print('apache.version: %r' % (apache.version,), file=output)
     print('mod_wsgi.version: %r' % (mod_wsgi.version,), file=output)
     print(file=output)
